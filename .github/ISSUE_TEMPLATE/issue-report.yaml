@@ -1,0 +1,64 @@
+name: Issue Report
+description: Document any issue found in automation, testing, or infrastructure
+labels: ["issue", "investigation"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Issue Title
+      placeholder: Short and clear title
+    validations:
+      required: true
+
+  - type: input
+    id: datetime
+    attributes:
+      label: Date and Time
+      placeholder: YYYY-MM-DD HH:MM
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      options:
+        - Staging
+        - Production
+        - Simulator
+        - Device Farm
+        - Local
+        - CI/CD Pipeline
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: what_happened
+    attributes:
+      label: What happened?
+      placeholder: Brief description of the issue
+    validations:
+      required: true
+
+  - type: textarea
+    id: why_happened
+    attributes:
+      label: Why did it happen? (Root Cause)
+      placeholder: If known, explain the reason. If unknown, write "Unknown"
+    validations:
+      required: true
+
+  - type: textarea
+    id: how_solved
+    attributes:
+      label: How was it solved?
+      placeholder: Describe the fix or workaround
+    validations:
+      required: true
+
+  - type: textarea
+    id: lesson_learned
+    attributes:
+      label: Lessons Learned (Optional)
+      placeholder: What can we improve to avoid this in the future?
